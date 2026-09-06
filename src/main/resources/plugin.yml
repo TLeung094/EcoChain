@@ -1,0 +1,33 @@
+name: EcoChain
+version: '1.0'
+
+main: me.tleung.ecochain.EcoChain
+paper-plugin-loader: me.tleung.ecochain.EcoChainLoader
+api-version: '26.2'
+load: STARTUP
+folia-supported: true
+
+authors: [ TLeung ]
+
+dependencies:
+  server:
+    PlaceholderAPI:
+      load: BEFORE
+      required: false
+      join-classpath: true
+
+commands:
+  ecochain:
+    description: 開啟生態儀表板，查看當前區域的生態報告
+  ecoadmin:
+    description: 管理員專用的生態控制指令
+    permission: ecochain.admin
+  ecoquest:
+    description: 查看你今天的每日生態任務進度
+  ecoshop:
+    description: 開啟生態點數商店
+
+permissions:
+  ecochain.admin:
+    description: 允許使用 /ecoadmin 指令
+    default: op
